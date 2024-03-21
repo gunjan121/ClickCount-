@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Date and dom properties and method</title>
+	<style type="text/css">
+		body{
+			background-color:#888;
+		}
+		#button-click{
+			height:40px;
+			width:50px;
+			font-size:26px;
+			border:none;
+			border-radius:5px;
+		}
+
+		.js-odd{
+			background-color:orange;
+			color:black;
+
+		}
+
+		.js-even{
+			background-color:white;
+			color:orange;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 id='greeting'></h1>
+
+	<button id='button-click' onclick="onclickcount()"></button>
+	<button onclick="ReSet()">Reset</button>
+
+
+	<script type="text/javascript">
+
+		let noOfTimeClicked=localStorage.getItem('noOfTimeClicked') ||0;
+
+		function onclickcount()
+		{
+			noOfTimeClicked++;
+			localStorage.setItem('noOfTimeClicked',noOfTimeClicked);
+			update()
+		}
+		// 	if(noOfTimeClicked%2==0)
+		// 	{
+		// 		btn.classList.remove('js-odd')
+		// 		btn.classList.add('js-even')
+		// 	}
+		// 	else{
+		// 		btn.classList.remove('js-even')
+		// 		btn.classList.add('js-odd')
+		// 	}
+		// 	btn.innerText=noOfTimeClicked;
+		// }
+
+
+		function ReSet()
+		{
+			
+			let value=localStorage.getItem('noOfTimeClicked')
+			console.log('score is ',value)
+			if(value!==undefined)
+			{
+				let score=localStorage.clear();
+				let btn=document.querySelector("#button-click");
+				noOfTimeClicked='0';
+				btn.innerText=noOfTimeClicked;
+				
+
+			}
+			else{
+				noOfTimeClicked++;
+			}
+		}
+
+
+		// function greetingmng(person='gunjan')
+		// {
+
+		// 	let mydate=new Date()
+		// 	// console.log(mydate)
+		// 	// console.log(mydate.getDate())
+
+		// 	let hours=mydate.getHours()
+		// 	console.log(hours)
+		// 	let heading=document.querySelector('#greeting');
+		// 	console.log(heading)
+		// 	if(hours>5 && hours<12)
+		// 	{
+		// 		heading.innerText=`GOOD MORNING ${person}`
+		// 	}
+		// 	else if(hours>12 && hours<18)
+		// 	{
+		// 		heading.innerText=`GOOD AFTERNOON ${person}`;
+		// 	}
+		// 	else{
+		// 		heading.innerText=`GOOD NIGHTS ${person}`;
+		// 	}
+
+		// }
+
+		// greetingmng()
+
+
+		function update()
+		{
+			let btn=document.querySelector("#button-click");
+
+			if(noOfTimeClicked%2==0)
+			{
+				btn.classList.remove('js-odd')
+				btn.classList.add('js-even')
+			}
+			else{
+				btn.classList.remove('js-even')
+				btn.classList.add('js-odd')
+			}
+			btn.innerText=noOfTimeClicked;
+		
+		}
+		update()
+
+		// console.log(mydate.getHours())
+		// console.log(mydate.getMinutes())
+		// console.log(mydate.get)
+		// console.log(mydate.get)
+
+
+		// DOM PROPERTIES AND METHODS  
+		//DOM AND ELEMENTS PROPERTIES 
+
+		// 1.location
+		// 2.title
+		// 3.href
+		// 4.domain
+		// 5.innerHTML
+		// 6.innerText
+		// 7.classList
+
+		// DOM AND ELEMENTS
+		// 1.getElemenById()
+		// 2.querySelector()
+		// 3.clasList:add(),remove()
+		// 4.createElement()
+		// 5.appendChild()
+		// 6.removeChild()
+		// 7.replaceChild()
+
+ 		
+
+	</script>
+
+</body>
+</html>
